@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use app\Http\Controllers\TasksController;
+use App\Http\Controllers\TasksController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
