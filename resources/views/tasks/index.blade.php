@@ -6,11 +6,12 @@
     </div>
 
     @if (isset($tasks))
-    <table>
+    <table class="table table-zebra w-full my-4">
         <thead>
             <tr>
                 <th>id</th>
                 <th>タスク</th>
+                <th>status</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
             <tr>
                 <td><a href="{{ route('tasks.show', $task->id) }}" class="link link-hover text-info">{{ $task-> id}}</a></td>
                 <td>{{ $task->content }}</td>
+                <td>{{ $task->status }}</td>
             </tr>
             @endforeach
         </tbody>

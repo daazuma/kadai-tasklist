@@ -3,11 +3,11 @@
 @section("content")
 
     <div class="prose ml-4">
-        <h2>id:{{ $task->id }}の編集</h2>
+        <h2>id:{{ $tasks->id }}の編集</h2>
     </div>
 
     <div class="flex justify-center">
-        <form method="POST" action="{{ route('tasks.update',$task->id) }}" class="w-1/2">
+        <form method="POST" action="{{ route('tasks.update',$tasks->id) }}" class="w-1/2">
             @csrf
             @method("PUT")
 
@@ -15,12 +15,19 @@
                     <label for="content" class="label">
                         <span class="label-text">タスク</span>
                     </label>
-                    <input type="text" name="content" value="{{ $task->content }}" classinput input-bordered w-full>
+                    <input type="text" name="content" value="{{ $tasks->content }}" class="input input-bordered w-full">
+                </div>
+
+                <div class="form-control my-4">
+                    <label for="status" class="label">
+                        <span class="label-text">status</span>
+                    </label>
+                    <input type="text" name="status" value="{{ $tasks->status }}" class="input input-bordered w-full">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-outlene">更新</button>
         </form>
 
     </div>
-    
+
 @endsection
