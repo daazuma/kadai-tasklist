@@ -29,5 +29,5 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::group(["middleware"=>["auth"]],function () {
-    Route::resource('tasks', TasksController::class, ["only"=>["show","create","edit","store","destroy"]]);
+    Route::resource('tasks', TasksController::class, ["only"=>["show","create","edit","store","destroy","update"]]);
 });
