@@ -84,9 +84,12 @@ class TasksController extends Controller
         //
         $task = Task::findOrFail($id);
 
-        return view("tasks.edit",[
-            "tasks"=>$task,
-        ]);
+        if (\Auth::id() === $task->user_id){
+            return view("tasks.edit",[
+                "tasks"=>$task,
+            ]);
+        }
+        return redirect("/")->with("failed");
     }
 
     /**
